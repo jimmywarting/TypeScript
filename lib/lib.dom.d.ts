@@ -4142,7 +4142,10 @@ interface DataTransferItem {
      * Invokes the callback with the string data as the argument, if the drag data item kind is text.
      */
     getAsString(callback: FunctionStringCallback | null): void;
+    /** @deprecated Non standard, use getAsFileSystemHandle() instead */
     webkitGetAsEntry(): FileSystemEntry | null;
+    /** The getAsFileSystemHandle() method of the DataTransferItem interface returns a FileSystemFileHandle if the dragged item is a file, or a FileSystemDirectoryHandle if the dragged item is a directory. */
+    getAsFileSystemHandle(): Promise<FileSystemFileHandle|FileSystemDirectoryHandle>;
 }
 
 declare var DataTransferItem: {
